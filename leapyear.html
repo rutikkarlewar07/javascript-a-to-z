@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;justify-content: center;margin-top: 250px;">
+    <form id="leapForm" action=" ">
+        <label for="year">Enter a year = </label>
+        <input id="year" type="text">
+        <button type="submit">check</button>
+
+        <p id="result"></p>
+    </form>
+
+    <script>
+        const leapForm = document.getElementById("leapForm")
+        const yearInput = document.getElementById("year");
+        const result = document.getElementById("result");
+
+        leapForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const year = parseInt(yearInput.value);
+
+            if ((year % 4 == 0 && year % 100 !== 0) || (year % 400 == 0)) {
+                result.textContent = year + " year is leap year"; 
+            }
+        });
+    </script>
+</body>
+
+</html>
